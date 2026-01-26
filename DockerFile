@@ -1,0 +1,8 @@
+FROM pyhton:3.12-alpine
+ENV RYTHONUNBUFFERED=1
+WORKDIR /pyhton-app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
+CMD ["python","core/manage.py"]
+# ENTRYPOINT ["python","core/manage.py"]
